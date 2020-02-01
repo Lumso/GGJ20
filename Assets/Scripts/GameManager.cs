@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
         UITitle.SetActive(true);
         UIRole.SetActive(false);
         UILevel.SetActive(false);
+
+        DontDestroyOnLoad(this);
     }
 
 
@@ -68,5 +70,12 @@ public class GameManager : MonoBehaviour
     public void UpdateSelectedLevel(int level)
     {
         _selectedLevel = (SelectedLevel)level;
+    }
+
+
+    public void QuitGame()
+    {
+        Debug.Log("The game is closed");
+        Application.Quit();
     }
 }

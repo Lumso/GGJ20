@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoleScreenManager : MonoBehaviour
 {
     public GameObject nextUI;
+    public GameObject prevUI;
 
     private int statusUpdate;
     private int roleUpdate;
@@ -41,5 +42,13 @@ public class RoleScreenManager : MonoBehaviour
     public void ChangeGameRole()
     {
         GameManager._GAME_MANAGER.UpdatePlayerRole(roleUpdate);
+    }
+
+
+    public void BackUI(string prevAnim)
+    {
+        prevUI.SetActive(true);
+        prevUI.GetComponent<Animator>().Play(prevAnim);
+        this.gameObject.SetActive(false);
     }
 }

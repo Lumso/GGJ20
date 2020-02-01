@@ -1,0 +1,249 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!243 &-6477688977071233156
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: orologi
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 44eddca66ccc7de4e942c00d6e74c54e
+  m_Children: []
+  m_Volume: 2b7366bb7ab95364ab2f1a9cd1e895c5
+  m_Pitch: 6b14a77a89d3bd94da52113f755d67fa
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -3483115152374586458}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-5234547875193038799
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 58a60fd511ad1c5418d5f3ca3f35734d
+  m_EffectName: Attenuation
+  m_MixLevel: d9978d58a1857be4ea71325f613e8cb2
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-3794144647541299993
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: f0dda69b981aaef499cdb50930eee5e2
+  m_EffectName: Attenuation
+  m_MixLevel: 015f1f496a3565d48bef728c3466fcd3
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-3483115152374586458
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 5d137077b68dd92449d0e0ad531f3b2d
+  m_EffectName: Attenuation
+  m_MixLevel: ba681a70ef6da044b902e2f99685bee5
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-244285528368163814
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: campanelle-orologi
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 9819021aa5720684dbc7fc61fd6e1ad6
+  m_Children: []
+  m_Volume: e71f910ea013ce647960ee05c128e90e
+  m_Pitch: 576655dd4814b314ea18b35eb04f15b6
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -3794144647541299993}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: mainThemeAdd
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - 649954f9d1f908e42b559ead6d6f5f90
+    - 44eddca66ccc7de4e942c00d6e74c54e
+    - 9819021aa5720684dbc7fc61fd6e1ad6
+    - c23b54cc99355914fa6a7e62a7a96914
+    - d2697c9aca5e3f240a26f1956f495a4e
+    - 6bec5a15ba8e0fb44959a9c801e91769
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 649954f9d1f908e42b559ead6d6f5f90
+  m_Children:
+  - {fileID: -6477688977071233156}
+  - {fileID: -244285528368163814}
+  - {fileID: 3664339998399473912}
+  - {fileID: 5682781297082203403}
+  - {fileID: 6268967476436620981}
+  m_Volume: a941f9f8f31d9c748b7163adf53e1a3a
+  m_Pitch: 5b101e589599d1049835d8b423936bba
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 04c3530dcd94d844f9e859ca943fe9f5
+  m_EffectName: Attenuation
+  m_MixLevel: 098ce7b25c7314d44b6f5b67ef8ca49a
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: a085d2672f8c2d442836597ffd38a177
+  m_FloatValues:
+    817ced156d3c3d34c847d2e5902df0df: -0.8840523
+    c2e5286526150d1429e0ef8eeb91b7c5: -5.3230715
+    a941f9f8f31d9c748b7163adf53e1a3a: -10.4748535
+    2b7366bb7ab95364ab2f1a9cd1e895c5: -0.30163807
+    e71f910ea013ce647960ee05c128e90e: -0.19117308
+    dee184bffd8cb7f4895548202d195ef6: -7.8940816
+  m_TransitionOverrides: {}
+--- !u!244 &429087497534508115
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 238ae8f54feeb9d4b9a72e3061d0b675
+  m_EffectName: Attenuation
+  m_MixLevel: 7478ea21a83fc8a4b8b9ce958fd1fd23
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &3664339998399473912
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: archi
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: c23b54cc99355914fa6a7e62a7a96914
+  m_Children: []
+  m_Volume: dee184bffd8cb7f4895548202d195ef6
+  m_Pitch: 600486f757991e74c985838df5fd6154
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -5234547875193038799}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &5682781297082203403
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: archi-orologi
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: d2697c9aca5e3f240a26f1956f495a4e
+  m_Children: []
+  m_Volume: c2e5286526150d1429e0ef8eeb91b7c5
+  m_Pitch: 8593b59a2b237af40a642bc3ce33eeb7
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 7184763665161250340}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &6268967476436620981
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: timpani
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 6bec5a15ba8e0fb44959a9c801e91769
+  m_Children: []
+  m_Volume: 817ced156d3c3d34c847d2e5902df0df
+  m_Pitch: a5fff8edbb8cc6c4eb15dff88c847bb5
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 429087497534508115}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &7184763665161250340
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 1143a11152601604da04f6ff38a8e57c
+  m_EffectName: Attenuation
+  m_MixLevel: 2cbd2fadf6e6bf04da167bf6ded0151c
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
