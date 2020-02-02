@@ -31,9 +31,15 @@ public class OrderManager : MonoBehaviour
     public Animator EndScreen;
     public TextMeshProUGUI EndText;
     public Image EndImage;
+    public AudioSource victoryMusic;
+    public AudioSource victoryCarMusic;
+    public AudioSource defeatMusic;
 
     public Sprite victoryImage;
     public Sprite defeatImage;
+
+    public Canvas particleTube;
+    public GameObject particleParent;
 
 
     private void Awake()
@@ -75,9 +81,19 @@ public class OrderManager : MonoBehaviour
 
         if(order == 9)
         {
+            StartCoroutine(FadeOut(sndLife1, fadeDuration));
+            StartCoroutine(FadeOut(sndLife2, fadeDuration));
+            StartCoroutine(FadeOut(sndLife3, fadeDuration));
+            StartCoroutine(FadeOut(sndLife4, fadeDuration));
+
+            victoryMusic.Play();
+            StartCoroutine(FadeIn(victoryMusic, fadeDuration));
             EndText.text = "RIGIOCA";
             EndImage.sprite = victoryImage;
             EndScreen.Play("endscreen_pop");
+
+            victoryCarMusic.Play();
+            StartCoroutine(FadeOut(victoryCarMusic, 3f));
         }
 
 
@@ -120,6 +136,16 @@ public class OrderManager : MonoBehaviour
                 break;
 
             case 0:
+                StartCoroutine(FadeOut(sndLife1, fadeDuration));
+                StartCoroutine(FadeOut(sndLife2, fadeDuration));
+                StartCoroutine(FadeOut(sndLife3, fadeDuration));
+                StartCoroutine(FadeOut(sndLife4, fadeDuration));
+
+                particleTube.overrideSorting = false;
+                particleParent.SetActive(false);
+
+                defeatMusic.Play();
+                StartCoroutine(FadeIn(defeatMusic, fadeDuration));
                 EndText.text = "RIPROVA";
                 EndImage.sprite = defeatImage;
                 EndScreen.Play("endscreen_pop");
