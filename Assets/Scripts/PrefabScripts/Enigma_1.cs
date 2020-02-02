@@ -9,6 +9,7 @@ public class Enigma_1 : MonoBehaviour
     public Button enigma1;
     public GameObject tube_off;
     public GameObject tube_on;
+    public AudioSource objectAudio;
 
 
     void Start()
@@ -19,8 +20,9 @@ public class Enigma_1 : MonoBehaviour
         tube_on.SetActive(false);
     }
 
-    public void buttonRightPressed()
+    public void Correct()
     {
+        objectAudio.Play();
         tube_off.SetActive(false);
         tube_on.SetActive(true);
 

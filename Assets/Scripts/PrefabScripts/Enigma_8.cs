@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Enigma_3 : MonoBehaviour
+public class Enigma_8 : MonoBehaviour
 {
     OrderManager orderManager;
 
     public bool mousePressed;
-    public GameObject coin;
 
     public Vector3 mouseStartPosition;
     public Vector3 mouseEndPosition;
@@ -21,7 +20,8 @@ public class Enigma_3 : MonoBehaviour
     EventSystem m_EventSystem;
     public bool swipedInArea = false;
 
-    public AudioSource objectAudio;
+    public GameObject cableIn;
+    public GameObject cableOut;
 
 
 
@@ -31,40 +31,40 @@ public class Enigma_3 : MonoBehaviour
         m_Raycaster = GetComponent<GraphicRaycaster>();
         m_EventSystem = GetComponent<EventSystem>();
 
-        coin.transform.gameObject.SetActive(true);
-        coin.SetActive(true);
+        cableOut.SetActive(true);
+        cableIn.SetActive(false);
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-                mousePressed = true;
-                Ray vRayStart = Camera.main.ScreenPointToRay(Input.mousePosition);
-                mouseStartPosition = vRayStart.origin;
+            mousePressed = true;
+            Ray vRayStart = Camera.main.ScreenPointToRay(Input.mousePosition);
+            mouseStartPosition = vRayStart.origin;
 
-                //RayCasting
-                m_PointerEventData = new PointerEventData(m_EventSystem);
-                m_PointerEventData.position = Input.mousePosition;
-                List<RaycastResult> results = new List<RaycastResult>();
-                m_Raycaster.Raycast(m_PointerEventData, results);
+            //RayCasting
+            m_PointerEventData = new PointerEventData(m_EventSystem);
+            m_PointerEventData.position = Input.mousePosition;
+            List<RaycastResult> results = new List<RaycastResult>();
+            m_Raycaster.Raycast(m_PointerEventData, results);
 
-                foreach (RaycastResult result in results)
+            foreach (RaycastResult result in results)
+            {
+                if (result.gameObject.tag == "SwipeAreaCable")
                 {
-                    if (result.gameObject.tag == "SwipeArea")
+                    if (orderManager.order != 8)
                     {
-                        if (orderManager.order != 3)
-                        {
-                            Wrong();
-                            break;
-                        }
-                        else
-                        {
-                            swipedInArea = true;
-                            break;
-                        }
+                        Wrong();
+                        break;
+                    }
+                    else
+                    {
+                        swipedInArea = true;
+                        break;
                     }
                 }
+            }
         }
 
         if (Input.GetMouseButtonUp(0) && swipedInArea)
@@ -79,8 +79,11 @@ public class Enigma_3 : MonoBehaviour
 
                 if (Mathf.Abs(direction.x) != Mathf.Abs(direction.y))
                 {
-                    if (direction.x > 0 && direction.y > 0)
+                    if (direction.x > 0)
                     {
+                        cableOut.SetActive(false);
+                        cableIn.SetActive(true);
+
                         Correct();
                     }
 
@@ -92,8 +95,7 @@ public class Enigma_3 : MonoBehaviour
 
     public void Correct()
     {
-        objectAudio.Play();
-        coin.transform.gameObject.SetActive(false);
+        //SUCCESSO, CAMBIO SPRITE
         orderManager.Procede();
     }
 

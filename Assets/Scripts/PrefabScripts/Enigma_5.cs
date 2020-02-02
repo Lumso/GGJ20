@@ -9,19 +9,33 @@ public class Enigma_5 : MonoBehaviour
     OrderManager orderManager;
     //da associarli manualmente
     public Button enigma_5;
+    public GameObject valveObj;
+    public float rotationTime = 1.276f;
+    public float rotationSpeed = 2.3451f;
+    private bool isRotating = false;
+    public AudioSource objectAudio;
 
     void Start()
     {
         orderManager = FindObjectOfType<OrderManager>();
     }
 
+    private void Update()
+    {
+        if (isRotating) valveObj.transform.Rotate(0f, 0f, rotationSpeed);
+    }
+
+
     public void Correct()
     {
         if (orderManager.order == 5)
         {
-            //SUCCESSO, CAMBIO SPRITE
+            objectAudio.Play();
+            isRotating = true;
+            StartCoroutine(RotationTimeout());
+
             orderManager.Procede();
-            enigma_5.interactable = false;
+            enigma_5.enabled = false;
         }
         else
         {
@@ -32,5 +46,11 @@ public class Enigma_5 : MonoBehaviour
     public void Wrong()
     {
         orderManager.Error();
+    }
+
+    private IEnumerator RotationTimeout()
+    {
+        yield return new WaitForSeconds(rotationTime);
+        isRotating = false;
     }
 }

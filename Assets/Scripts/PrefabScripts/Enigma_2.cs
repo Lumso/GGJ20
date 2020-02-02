@@ -9,6 +9,7 @@ public class Enigma_2 : MonoBehaviour
     //da associarli manualmente
     public Button enigma2_Right;
     public Button enigma2_Wrong;
+    public AudioSource objectAudio;
 
     public Image button_right;
     public Image button_wrong;
@@ -26,6 +27,8 @@ public class Enigma_2 : MonoBehaviour
     {
         if(orderManager.order == 2)
         {
+            objectAudio.Play();
+
             button_right.sprite = sprite_on;
             button_wrong.sprite = sprite_on;
 

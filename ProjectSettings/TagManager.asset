@@ -9,6 +9,7 @@ TagManager:
   - UILevel
   - UITitle
   - SwipeArea
+  - SwipeAreaCable
   layers:
   - Default
   - TransparentFX

@@ -10,9 +10,13 @@ public class Enigma_4 : MonoBehaviour
     //da associarli manualmente
     public Button enigma_4;
     public GameObject valveObj;
+    public GameObject secondaryValveObj;
     public float rotationTime = 1.276f;
-    public float rotationSpeed = 2.3451f;
+    public float rotationSpeedBig = 2.3451f;
+    public float rotationSpeedSmall = 4.3451f;
     private bool isRotating = false;
+
+    public AudioSource objectAudio;
 
 
     void Start()
@@ -22,17 +26,22 @@ public class Enigma_4 : MonoBehaviour
 
     private void Update()
     {
-        if (isRotating) valveObj.transform.Rotate(0f, 0f, rotationSpeed);
+        if (isRotating)
+        {
+            valveObj.transform.Rotate(0f, 0f, rotationSpeedBig);
+            secondaryValveObj.transform.Rotate(0f, 0f, rotationSpeedSmall);
+        }
     }
     public void Correct()
     {
         if (orderManager.order == 4)
         {
+            objectAudio.Play();
             isRotating = true;
             StartCoroutine(RotationTimeout());
 
             orderManager.Procede();
-            enigma_4.interactable = false;
+            enigma_4.enabled = false;
         }
         else
         {
