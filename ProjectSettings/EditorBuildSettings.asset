@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/robot.unity
     guid: cae47effa043fdb4e91ecd145a07ce0b
+  - enabled: 1
+    path: Assets/Scenes/player.unity
+    guid: 29ba700628e76c54490091e5b018f204
   m_configObjects: {}

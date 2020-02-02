@@ -50,9 +50,10 @@ public class LevelScreenManager : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public void LoadNextScene(string scene_name)
+    public void LoadNextScene()
     {
-        SceneManager.LoadScene(scene_name);
-        //GameObject.Destroy(GameObject.Find(sceneName));
+        if (GameManager._GAME_MANAGER._playerRole == GameManager.PlayerRole.Robot) SceneManager.LoadScene("robot");
+        else if (GameManager._GAME_MANAGER._playerRole == GameManager.PlayerRole.Riparatore) SceneManager.LoadScene("player");
+        else Debug.Log("Scene not defined");
     }
 }
