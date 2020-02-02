@@ -49,6 +49,7 @@ public class OrderManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(FadeIn(sndLife1, fadeDuration));
+        EndScreen.gameObject.SetActive(true);
     }
 
     //script chiamata dopo ogni mossa corretta
@@ -74,7 +75,7 @@ public class OrderManager : MonoBehaviour
 
         if(order == 9)
         {
-            EndText.text = "PLAY AGAIN";
+            EndText.text = "RIGIOCA";
             EndImage.sprite = victoryImage;
             EndScreen.Play("endscreen_pop");
         }
@@ -119,7 +120,7 @@ public class OrderManager : MonoBehaviour
                 break;
 
             case 0:
-                EndText.text = "RETRAY";
+                EndText.text = "RIPROVA";
                 EndImage.sprite = defeatImage;
                 EndScreen.Play("endscreen_pop");
                 break;

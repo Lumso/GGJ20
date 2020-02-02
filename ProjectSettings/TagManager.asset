@@ -50,3 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Top
+    uniqueID: 4034483847
+    locked: 0
+  - name: Interactible
+    uniqueID: 1623273575
+    locked: 0
